@@ -1,0 +1,88 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif; /* Подключаем шрифт Roboto */
+    background-color: #f4f4f4; /* Светлый фон */
+    color: #333; /* Цвет текста */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #4CAF50; /* Цвет заголовков */
+}
+
+/* Формы */
+form {
+    max-width: 600px; /* Максимальная ширина формы */
+    margin: 20px auto; /* Центрируем форму */
+    padding: 20px; /* Отступы внутри формы */
+    background: #fff; /* Белый фон для формы */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Поля ввода и селект */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Отступы */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    border: 1px solid #ccc; /* Обводка */
+    border-radius: 5px; /* Закругленные углы */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+
+/* Кнопка отправки */
+input[type="submit"] {
+    background-color: #4CAF50; /* Цвет кнопки */
+    color: white; /* Цвет текста на кнопке */
+    border: none; /* Без обводки */
+    cursor: pointer; /* Указатель при наведении */
+    padding: 10px; /* Отступы */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
+}
+
+/* Чекбокс */
+input[type="checkbox"] {
+    margin-right: 10px; /* Отступ справа */
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+/* Результаты */
+#result {
+    max-width: 600px; /* Максимальная ширина блока с результатами */
+    margin: 20px auto; /* Центрируем блок */
+    padding: 20px; /* Отступы */
+    background: #fff; /* Белый фон */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Уменьшаем отступы на мобильных устройствах */
+    }
+
+    form {
+        padding: 10px; /* Уменьшаем отступы внутри формы */
+    }
+}
