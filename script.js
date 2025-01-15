@@ -1,23 +1,12 @@
 function toggleReportInput(checkbox) {
     const reportInput = document.getElementById('name2');
     if (checkbox.checked) {
+        reportInput.disabled = false; // Включаем поле ввода, если чекбокс включен
         reportInput.required = true; // Делаем поле обязательным
     } else {
+        reportInput.disabled = true; // Отключаем поле ввода, если чекбокс выключен
         reportInput.required = false; // Убираем обязательность
         reportInput.value = ''; // Очищаем поле, если чекбокс выключен
-    }
-}
-
-function toggleSubmitButton() {
-    const checkbox = document.getElementById('hasReport');
-    const reportInput = document.getElementById('name2');
-    const submitButton = document.querySelector('input[type="submit"]');
-
-    // Кнопка всегда активна
-    if (checkbox.checked) {
-        submitButton.disabled = reportInput.value.trim() === ''; // Проверяем заполненность поля, если чекбокс включён
-    } else {
-        submitButton.disabled = false; // Кнопка активна, если чекбокс выключен
     }
 }
 
