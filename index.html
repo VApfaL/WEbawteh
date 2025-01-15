@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем стили -->
     <script src="script.js" defer></script>
 </head>
 <body>
     <h1>WEB-технологии</h1>
     <h2>Регистрация</h2>
-    <form id="registrationForm" action="register.php" method="POST">
+    <form id="registrationForm">
         <div>
             <label for="username">Фамилия, имя, отчество:</label>
             <input type="text" name="username" id="username" 
@@ -32,24 +33,24 @@
         </div>
         <div>
             <label for="section">Выберите секцию конференции:</label>
-            <select name="section" id="section">
+            <select name="section" id="section" required>
                 <option value="математика">Математика</option>
                 <option value="физика">Физика</option>
                 <option value="информатика">Информатика</option>
             </select>
         </div>
         <div>
-            <input type="checkbox" id="hasReport" onclick="toggleReportInput(this)"/> Участие с докладом
-            <input id="name2" name="name2" disabled="disabled" placeholder="Тема доклада" />
+            <input type="checkbox" id="hasReport" onclick="toggleReportInput(this)"/> 
+            <label for="hasReport">Участие с докладом</label>
+            <input id="name2" name="name2" placeholder="Тема доклада" oninput="toggleSubmitButton()" />
         </div>
-  
         <div>
             <label for="birthday">Дата рождения:</label>
-            <input type="date" id="birthday" name="birthday" required>
+            <input type="date" id="birthday" name="birthday"> 
+            
         </div>
 
         <input type="submit" value="Зарегистрироваться">
     </form>
-    
 </body>
 </html>
