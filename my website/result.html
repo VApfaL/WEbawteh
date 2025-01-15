@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты регистрации</title>
+</head>
+<body>
+    <h1>Ваши данные:</h1>
+    <div id="result"></div>
+    <script>
+        // Получаем данные из localStorage и отображаем их
+        const resultDiv = document.getElementById('result');
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+            resultDiv.innerHTML = `
+                <p><strong>Фамилия, имя, отчество:</strong> ${userData.username}</p>
+                <p><strong>Номер телефона:</strong> ${userData.tel}</p>
+                <p><strong>Электронная почта:</strong> ${userData.email}</p>
+                <p><strong>Секция конференции:</strong> ${userData.section}</p>
+                ${userData.name2 ? `<p><strong>Тема доклада:</strong> ${userData.name2}</p>` : ''}
+                <p><strong>Дата рождения:</strong> ${userData.birthday}</p>
+                <p><strong>Участие с докладом:</strong> ${userData.hasReport ? 'Да' : 'Нет'}</p> <!-- Отображаем состояние чекбокса -->
+            `;
+        } else {
+            resultDiv.innerHTML = '<p>Данные не найдены.</p>';
+        }
+    </script>
+</body>
+</html>
