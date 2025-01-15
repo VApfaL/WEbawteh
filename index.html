@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>WEB-технологии</h1>
+    <h2>Регистрация</h2>
+    <form id="registrationForm" action="register.php" method="POST">
+        <div>
+            <label for="username">Фамилия, имя, отчество:</label>
+            <input type="text" name="username" id="username" 
+            required placeholder="Фамилия, имя, отчество"
+            pattern="[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+"
+            size="20">
+        </div>
+        <div>
+            <label for="tel">Введите номер телефона:</label>
+            <input type="tel" name="tel" id="tel" 
+            required placeholder="номер телефона"
+            pattern="\+7[0-9]{10}"
+            size="13">
+        </div>
+        <div>
+            <label for="email">Введите электронную почту:</label>
+            <input type="email" name="email" id="email" 
+            required placeholder="почта">
+        </div>
+        <div>
+            <label for="section">Выберите секцию конференции:</label>
+            <select name="section" id="section">
+                <option value="математика">Математика</option>
+                <option value="физика">Физика</option>
+                <option value="информатика">Информатика</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" id="hasReport" onclick="toggleReportInput(this)"/> Участие с докладом
+            <input id="name2" name="name2" disabled="disabled" placeholder="Тема доклада" />
+        </div>
+  
+        <div>
+            <label for="birthday">Дата рождения:</label>
+            <input type="date" id="birthday" name="birthday" required>
+        </div>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    
+</body>
+</html>
