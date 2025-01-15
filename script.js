@@ -1,3 +1,26 @@
+function toggleReportInput(checkbox) {
+    const reportInput = document.getElementById('name2');
+    if (checkbox.checked) {
+        reportInput.required = true; // Делаем поле обязательным
+    } else {
+        reportInput.required = false; // Убираем обязательность
+        reportInput.value = ''; // Очищаем поле, если чекбокс выключен
+    }
+}
+
+function toggleSubmitButton() {
+    const checkbox = document.getElementById('hasReport');
+    const reportInput = document.getElementById('name2');
+    const submitButton = document.querySelector('input[type="submit"]');
+
+    // Кнопка всегда активна
+    if (checkbox.checked) {
+        submitButton.disabled = reportInput.value.trim() === ''; // Проверяем заполненность поля, если чекбокс включён
+    } else {
+        submitButton.disabled = false; // Кнопка активна, если чекбокс выключен
+    }
+}
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Предотвращаем отправку формы
 
@@ -10,17 +33,4 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     // Перенаправляем на страницу с результатами
     window.location.href = 'result.html';
-})
-
-function toggleReportInput(checkbox) {
-    var input = document.getElementById('name2');
-    if (checkbox.checked) {
-        input.disabled = false;
-        input.required = true; // Делаем поле обязательным
-        input.focus();
-    } else {
-        input.disabled = true;
-        input.required = false; // Убираем обязательность
-        input.value = ""; // Очищаем поле при отключении
-    }
-}
+});
