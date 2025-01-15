@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -14,22 +14,15 @@
     <form id="registrationForm">
         <div>
             <label for="username">Фамилия, имя, отчество:</label>
-            <input type="text" name="username" id="username" 
-            required placeholder="Фамилия, имя, отчество"
-            pattern="[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+"
-            size="20">
+            <input type="text" name="username" id="username" required placeholder="Фамилия, имя, отчество" pattern="[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+" size="20">
         </div>
         <div>
             <label for="tel">Введите номер телефона:</label>
-            <input type="tel" name="tel" id="tel" 
-            required placeholder="номер телефона"
-            pattern="\+7[0-9]{10}"
-            size="13">
+            <input type="tel" name="tel" id="tel" required placeholder="номер телефона" pattern="\+7[0-9]{10}" size="13">
         </div>
         <div>
             <label for="email">Введите электронную почту:</label>
-            <input type="email" name="email" id="email" 
-            required placeholder="почта">
+            <input type="email" name="email" id="email" required placeholder="почта">
         </div>
         <div>
             <label for="section">Выберите секцию конференции:</label>
@@ -42,14 +35,17 @@
         <div>
             <input type="checkbox" id="hasReport" onclick="toggleReportInput(this)"/> 
             <label for="hasReport">Участие с докладом</label>
-            <input id="name2" name="name2" placeholder="Тема доклада" oninput="toggleSubmitButton()" />
+            <input id="name2" name="name2" placeholder="Тема доклада" disabled/> 
         </div>
         <div>
             <label for="birthday">Дата рождения:</label>
             <input type="date" id="birthday" name="birthday"> 
-            
         </div>
 
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</body>
+</html>
         <input type="submit" value="Зарегистрироваться">
     </form>
 </body>
